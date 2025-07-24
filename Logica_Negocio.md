@@ -1,4 +1,4 @@
-# Promociones Adiemi - E-Commerce
+# Promociones Adiemi - eCommerce
 
 ## Listado de Entidades
 
@@ -7,14 +7,14 @@
 - usuario_id **(PK)**
 - nombre
 - apellido
-- cedula
+- cedula **(UQ)**
 - telefono **(UQ)**
 - password_hash
 - tipo_usuario **(FK)**
 - email **(UQ)** (opcional)
+- historial_pedidos **(FK)**
 - direccion
-- codigo_postal
-- ciudad
+- fecha_registro
 
 ### tipos_usuario **(EC)**
 
@@ -28,7 +28,6 @@
 - precio
 - stock
 - categoria **(FK)**
-- promocion **(FK)**
 - foto
 - descripcion
 
@@ -36,38 +35,32 @@
 
 - promocion_id **(PK)**
 - promocion_nombre
-- productos **(FK)**
 
 ### productos_x_promocion **(EP | ED)**
 
-- promocion_id
-- producto_id
+- promocion_id **(FK)**
+- producto_id **(FK)**
 
 ### categorias **(EC)**
 
 - categoria_id **(PK)**
 - categoria_nombre
 
-### carrito **(EP)**
+### pedido **(ED)**
 
-- usuario_id **(PK)**
+- pedido_id **(PK)**
+- usuario_id **(FK)**
+- fecha_pedido
+- estado
+- metodo_pago_id **(FK)**
+- total
 
-### carrito_productos **(EP)**
+### pedido_linea **(EP)**
 
-- carrito_id **(FK)**
+- pedido_id **(FK)**
 - producto_id **(FK)**
 - cantidad
-
-### venta **(ED)**
-
-- venta_id **(PK)**
-- cliente_id **(FK)**
-- fecha
-- monto
-
-### historial_pedidos **(ED)**
-
-- usuario_id
+- subtotal
 
 ### metodos_pago **(EC)**
 
@@ -75,5 +68,12 @@
 - metodo_pago
 
 ## Relaciones
+
+1. usuario (1) -> pedido (0-N).
+1. promocion (1) -> productos (N).
+1. pedido (1) -> productos (N).
+1. pedido (N) -> método de pago (1).
+1. producto (N) -> categoria (1).
+1. usuario (N) -> tipo de usuario (1).
 
 ## Reglas de negocio
