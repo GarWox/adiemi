@@ -12,7 +12,6 @@
 - password_hash
 - tipo_usuario **(FK)**
 - email **(UQ)** (opcional)
-- historial_pedidos **(FK)**
 - direccion
 - fecha_registro
 
@@ -72,6 +71,7 @@
 1. usuario (1) -> pedido (0-N).
 1. promocion (1) -> productos (N).
 1. pedido (1) -> productos (N).
+1. pedido (1) -> pedido_linea (N).
 1. pedido (N) -> método de pago (1).
 1. producto (N) -> categoria (1).
 1. usuario (N) -> tipo de usuario (1).
