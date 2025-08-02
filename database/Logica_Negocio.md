@@ -5,15 +5,15 @@
 ### usuarios **(ED)**
 
 - usuario_id **(PK)**
+- tipo_usuario **(FK)**
 - nombre
 - apellido
+- email **(UQ)**
 - cedula **(UQ)**
 - telefono **(UQ)**
-- password_hash
-- tipo_usuario **(FK)**
-- email **(UQ)** (opcional)
 - direccion
 - fecha_registro
+- password_hash
 
 ### tipos_usuario **(EC)**
 
@@ -73,6 +73,7 @@
 1. pedido (1) -> productos (N).
 1. pedido (1) -> pedido_linea (N).
 1. pedido (N) -> método de pago (1).
+1. pedido (N) -> estado de pago (1).
 1. producto (N) -> categoria (1).
 1. usuario (N) -> tipo de usuario (1).
 
