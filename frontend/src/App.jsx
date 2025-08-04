@@ -1,12 +1,12 @@
-import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/Home/HomePage';
 
-const App = () => {
+export default function App() {
   return (
-    <div>
-      <h1>Paginá en construcción</h1>
-      <p>por favor, no quitar el icono de la pestaña estoy esperando que ahi pondre el logo gracias, besos </p>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App
