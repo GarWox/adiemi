@@ -1,3 +1,7 @@
+.mainBanner{
+  height: 90vh;
+  background-color: aqua;
+}
 .homePage{
   display: flex;
   flex-direction: column;
@@ -5,7 +9,7 @@
 }
 .homeSection{
   height: 100vh;
-  padding: 0px;
+  padding:0px;
 }
 
 

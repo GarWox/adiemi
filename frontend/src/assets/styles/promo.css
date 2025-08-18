@@ -31,6 +31,9 @@
   --gray: #b6afaf;
   --lightGray: #f7f7f7;
   --green:#01893b;
+  --red: #b11b0a;
+  --lightRed: #e74c3c;
+
 }
 
 
@@ -63,14 +66,14 @@
 
 .cardsContainer {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   overflow: hidden;
   width: 100%;
   max-width: 1200px;
 }
 
 .promoCard {
-  min-width: calc(33.333% - 1rem);
+  min-width: calc(32% - 1rem);
   background: var(--black);
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.329);
@@ -80,7 +83,7 @@
 
 .imageWrapper {
   position: relative;
-  height: 200px;
+  height: 290px;
 }
 
 .imageWrapper img {
@@ -88,12 +91,12 @@
   height: 100%;
   object-fit: cover;
 }
-
-.discount-badge {
+/* este es por si acaso hacen uno de descuento */
+.discountBadge {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: #e74c3c;
+  background: var(--lightRed);
   color: white;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
@@ -161,7 +164,7 @@
 }
 /* ------- modal ------------ */
 /* ESTILOS DEL MODAL */
-.modal-overlay {
+.modalOverlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -176,29 +179,42 @@
   animation: fadeIn 0.3s forwards;
 }
 
-.modal-content {
+.modalContent {
   background: white;
   border-radius: 8px;
-  max-width: 90%;
+  max-width: 100%;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
   animation: slideUp 0.3s forwards;
+  padding: 1rem;
 }
 
-.modal-close-btn {
+.modalCloseBtn {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
+  top: 7px;
+  right: 7px;
+  font-size: 2.5rem;
   cursor: pointer;
-  color: #333;
+  color: var(--red);
+  width: 2.4rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 50px;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
 }
 
-.modal-body {
-  padding: 2rem;
+.modalCloseBtn:active{
+  border: 1px solid var(--red);
+}
+
+.modalBody {
+  padding: 1rem;
 }
 
 @keyframes fadeIn {
@@ -208,4 +224,29 @@
 @keyframes slideUp {
   from { transform: translateY(20px); }
   to { transform: translateY(0); }
+}
+
+/* ------modal de los pasos ------- */
+.modalContainerSteps {
+  display: grid;
+  max-width: 800px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+} 
+.stepImgContainer {
+  width: 350px;
+}
+
+.imgStep {
+  width: 100%;
+  height: auto;
+  border-radius: 7px;
+}
+
+.titleModal {
+  text-align: center;
+  font-family: ExtraBold;
+  font-size: 30px;
+  color: var(--black);
+  margin-bottom: 1rem;
 }

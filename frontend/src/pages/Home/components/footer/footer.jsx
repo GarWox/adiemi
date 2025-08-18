@@ -1,12 +1,13 @@
 import React from 'react'
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import { AiFillTikTok } from "react-icons/ai";
+import logo from '../../../../assets/images/logoAdiemi.png';
 const footer = () => {
   return (
     <footer>
         <div>
             <div>
-                <img src="" alt="" />
+                <img src={logo} alt="Adiemi" />
             </div>
             <div>
                 <h3>Productos</h3>
@@ -36,10 +37,10 @@ const footer = () => {
         <div>
             <h2>¡Siguenos en nuestras redes sociales!</h2>
             <div>
-                <a href=""><FaInstagram /></a>
-                <a href=""><FaFacebook /></a>
-                <a href=""><AiFillTikTok /></a>
-                <a href=""><FaYoutube /></a>
+                <a href="https://www.instagram.com/promocionesadiemi/" target="_blank"><FaInstagram /></a>
+                <a href="https://www.facebook.com/adiemi.adiemi.1?locale=es_LA" target="_blank"><FaFacebook /></a>
+                <a href="https://www.tiktok.com/@promosadiemioficial?_t=ZM-8yzDBPngdqa&_r=1" target="_blank"><AiFillTikTok /></a>
+                <a href="https://www.youtube.com/@promocionesAdiemi" target="_blank"><FaYoutube /></a>
             </div>
         </div>
         <div>

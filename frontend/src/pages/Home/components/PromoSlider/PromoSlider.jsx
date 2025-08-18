@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import promo1 from '../../../../assets/images/Producto1.jpg';
-import promo2 from '../../../../assets/images/Producto2.jpg';
-import promo3 from '../../../../assets/images/Producto3.jpg';
+import tradicional from '../../../../assets/images/Tradicional.jpg';
+import pFull from '../../../../assets/images/PremiumFull.jpg';
+import repleta from '../../../../assets/images/Repleta.jpg';
+import step1 from '../../../../assets/images/Paso1.jpg';
+import step2 from '../../../../assets/images/Paso2.jpg';
+import step3 from '../../../../assets/images/Paso3.jpg';
+import step4 from '../../../../assets/images/Pasos4.jpg';
 import { Modal } from '../../../../componentes/ReusableModal';
 import '../../../../assets/styles/promo.css';
 
 const PromoSlider = () => {
   // mini base de datos de promociones
   const promotions = [
-    { id: 1, title: "Tradicional", image: promo1},
-    { id: 2, title: "Premium Full", image: promo2},
-    { id: 3, title: "Repleta", image: promo3,},
-    { id: 4, title: "Premium Full Star", image: promo1},
+    { id: 1, title: "Tradicional", image: tradicional},
+    { id: 2, title: "Premium Full", image: pFull},
+    { id: 3, title: "Repleta", image: repleta,},
+    { id: 4, title: "Premium Full Star", image: pFull},
   ];
 
 
@@ -91,8 +95,13 @@ const PromoSlider = () => {
         </div>
       </div>
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <h2>Contenido Personalizado</h2>
-        <p>tralalu Tralala</p>
+        <h2 className='titleModal'>Pasos para Hacer tu pedido</h2>
+        <div className='modalContainerSteps'>
+          <div className='stepImgContainer'><img className='imgStep' src={step1} alt="pasos" /></div>
+          <div className='stepImgContainer'><img className='imgStep' src={step2} alt="pasos" /></div>
+          <div className='stepImgContainer'><img className='imgStep' src={step3} alt="pasos" /></div>
+          <div className='stepImgContainer'><img className='imgStep' src={step4} alt="pasos" /></div>
+        </div>
       </Modal>
     </section>
 

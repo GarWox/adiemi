@@ -1,0 +1,73 @@
+@font-face {
+  font-family: 'extraBoldItalic';
+  src: url('../../assets/fonts/Montserrat-ExtraBoldItalic.ttf')
+}
+@font-face {
+  font-family: 'semiBoldItalic';
+  src: url('../../assets/fonts/Montserrat-SemiBoldItalic.ttf')
+}
+@font-face {
+  font-family: 'boldItalic';
+  src: url('../../assets/fonts/Montserrat-BoldItalic.ttf')
+}
+
+@font-face {
+  font-family: 'montserrat';
+  src: url('../../assets/fonts/Montserrat-Regular.ttf')
+}
+
+@font-face {
+  font-family: 'ExtraBold';
+  src: url('../../assets/fonts/Montserrat-ExtraBoldItalic.ttf')
+}
+
+@font-face {
+  font-family: 'Bold';
+  src: url('../../assets/fonts/Montserrat-Bold.ttf')
+}
+:root {
+  --black: #000;
+  --white: #fff;
+  --gray: #b6afaf;
+  --lightGray: #f7f7f7;
+  --green:#01893b;
+  --red: #b11b0a;
+  --lightRed: #e74c3c;
+
+}
+
+.productsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.boxProducts {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: #333;
+}
+
+.boxProducts:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.boxProducts img {
+  width: 100%;
+  height: 300px;
+  object-fit:fill;
+}
+
+.titleImgProd {
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+  font-size: 1rem;
+  font-family: 'montserrat', sans-serif;
+}

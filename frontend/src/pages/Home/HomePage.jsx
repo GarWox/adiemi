@@ -55,7 +55,7 @@ const HomePage = () => {
         scrollToAdvisor={() => scrollTo(advisorRef)}
         activeSection={activeSection}
       />
-      <div className="homeSection">
+      <div className="mainBanner">
         <section ref={bannerRef}>
           <MainBanner />
         </section>

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import '../../../../assets/styles/advisorHome.css';
-import gerente1 from '../../../../assets/images/Gerente1.jpg'
-import gerente2 from '../../../../assets/images/Gerente2.jpg'
-import gerente3 from '../../../../assets/images/Gerente3.jpg'
+import gerente1 from '../../../../assets/images/Yunmary_Garcia.jpg'
+import gerente2 from '../../../../assets/images/Mairelis_Rodríguez.jpg'
+import gerente3 from '../../../../assets/images/Amada_Gonzáles.jpg'
 
 const AdvisorInfo= () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -12,32 +12,22 @@ const AdvisorInfo= () => {
   const advisors = [
     {
       id: 1,
-      municipio: "Municipio Benítez",
-      testimonio: "Gerente de promociones con 5 años de experiencia ayudando a nuevas emprendedoras.",
-      promotora: "@Promotora.1",
+      gerente: "Yunmary Garcia",
+      testimonio: "“Promociones Adiemi tiene una gerente que ofrece a la zona de Maturin, Caripe, puerto la cruz y Barcelona, donde la calidad de variaciones de productos será tu mejor opción para poder equipar tu hogar.”",
       image: gerente1,
     },
     {
       id: 2,
-      municipio: "Municipio Cruz Salmerón",
-      testimonio: "Especialista en desarrollo de negocios para emprendedoras Adiemi.",
-      promotora: "@Promotora.2",
+      gerente: "Mairelis Rodríguez",
+      testimonio: "“Tu éxito también es el mío, por eso, como Gerente de Adiemi, estoy comprometida a apoyarte, impulsarte y ser tu aliada en cada paso que des. ¡Cuentas conmigo!”",
       image: gerente2,
     },
     {
       id: 3,
-      municipio: "Municipio Rivas",
-      testimonio: "Líder de ventas regional con amplia experiencia en capacitación.",
-      promotora: "@Promotora.3",
-      image: gerente3
+      gerente: "Amada Gonzáles",
+      testimonio: "“Le brindo a los clientes la gran oportunidad de equipar su casa con una experiencia excepcional. Soy esencial para construir lealtad y una marca duradera para así satisfacer la necesidad de los clientes, su felicidad no tiene precio.”",
+      image: gerente3,
     },
-    {
-      id: 4,
-      municipio: "Municipio Andrés Eloy",
-      testimonio: "Coordinadora de nuevas incorporaciones al equipo Adiemi.",
-      promotora: "@Promotora.4",
-      image: gerente2
-    }
   ];
 
   const visibleAdvisors = [

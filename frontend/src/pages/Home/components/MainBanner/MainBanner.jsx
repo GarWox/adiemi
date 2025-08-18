@@ -1,5 +1,5 @@
 import React from 'react'
-import MotoFoto from '../../../../assets/images/Moto_adiemi.jpg'
+import MotoFoto from '../../../../assets/images/PortadaInicio.jpg'
 import '../../../../assets/styles/HomeBanner.css'
 
 const MainBanner = () => {
