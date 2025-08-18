@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import promo1 from '../../../../assets/images/Producto1.jpg';
 import promo2 from '../../../../assets/images/Producto2.jpg';
 import promo3 from '../../../../assets/images/Producto3.jpg';
+import { Modal } from '../../../../componentes/ReusableModal';
 import '../../../../assets/styles/promo.css';
 
 const PromoSlider = () => {
@@ -16,6 +17,7 @@ const PromoSlider = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const getVisibleCards = () => {
@@ -38,26 +40,26 @@ const PromoSlider = () => {
   };
 
   return (
-    <section className="promo-slider-section">
-      <div>
-        <h2 className="section-title">Promociones Destacadas</h2>
+    <section className="promoSliderSection">
+      <div className='promTitle'>
+        <h2 className="sectionTitle">Promociones Destacadas</h2>
       </div>
       
-      <div className="slider-container">
+      <div className="sliderContainer">
         {/* boton de previos */}
-        <button className="nav-button prev" onClick={prevSlide}>
+        <button className="navButton prev" onClick={prevSlide}>
           &lt;
         </button>
         {/* contenedor de las tarjetas de promociones */}
-        <div className="cards-container">
+        <div className="cardsContainer">
           {visibleCards.map((promo) => (
-            <div key={`${promo.id}-${currentIndex}`} className="promo-card">
-              <div className="image-wrapper">
+            <div key={`${promo.id}-${currentIndex}`} className="promoCard">
+              <div className="imageWrapper">
                 <img src={promo.image} alt={promo.title} />
                 
               </div>
               {/* la parte del titulo */}
-              <div className="card-content">
+              <div className="cardContent">
                 <h3>{promo.title}</h3>
                 {/* <button className="shop-button">Ver más</button> */}
                 {/* este lo incorporare despues porque tengo que preguntar si el ver mas va para la versión beta */}
@@ -66,12 +68,12 @@ const PromoSlider = () => {
           ))}
         </div>
 
-        <button className="nav-button next" onClick={nextSlide}>
+        <button className="navButton next" onClick={nextSlide}>
           &gt;
         </button>
       </div>
 
-      <div className="dots-container">
+      <div className="dotsContainer">
         {promotions.map((_, index) => (
           <span 
             key={index}
@@ -80,15 +82,20 @@ const PromoSlider = () => {
           />
         ))}
       </div>
-      <div>
+      <div className='pedidoContainer'>
         <div>
           <h3>¿No sabes hacer tu pedido?</h3>
         </div>
         <div>
-          <button>Click aquí para saber cómo</button>
+          <button onClick={() => setIsOpen(true)} className=''>Click aquí para saber cómo</button>
         </div>
       </div>
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <h2>Contenido Personalizado</h2>
+        <p>tralalu Tralala</p>
+      </Modal>
     </section>
+
   );
 };
 

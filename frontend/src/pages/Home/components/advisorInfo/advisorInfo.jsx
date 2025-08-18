@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import '../../../../assets/styles/advisorHome.css';
+import gerente1 from '../../../../assets/images/Gerente1.jpg'
+import gerente2 from '../../../../assets/images/Gerente2.jpg'
+import gerente3 from '../../../../assets/images/Gerente3.jpg'
 
-const AdvisorInfo = () => {
+const AdvisorInfo= () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showArrows, setShowArrows] = useState(false);
 
@@ -10,31 +13,31 @@ const AdvisorInfo = () => {
     {
       id: 1,
       municipio: "Municipio Benítez",
-      testimonio: "El municipio Benítez cuenta con una gerente de promociones Adiemi dispuesta a ofrecerte la mejor atención y ayuda necesaria para que puedas formar parte de nuestro equipo de trajo.",
+      testimonio: "Gerente de promociones con 5 años de experiencia ayudando a nuevas emprendedoras.",
       promotora: "@Promotora.1",
-      image: "asesora1.jpg"
+      image: gerente1,
     },
     {
       id: 2,
-      municipio: "Municipio Benítez",
-      testimonio: "El municipio Benítez cuenta con una gerente de promociones Adiemi dispuesta a ofrecerte la mejor atención y ayuda necesaria para que puedas formar parte de nuestro equipo de trajo.",
-      promotora: "@Promotora.1",
-      image: "asesora1.jpg"
+      municipio: "Municipio Cruz Salmerón",
+      testimonio: "Especialista en desarrollo de negocios para emprendedoras Adiemi.",
+      promotora: "@Promotora.2",
+      image: gerente2,
     },
     {
       id: 3,
-      municipio: "Municipio Benítez",
-      testimonio: "El municipio Benítez cuenta con una gerente de promociones Adiemi dispuesta a ofrecerte la mejor atención y ayuda necesaria para que puedas formar parte de nuestro equipo de trajo.",
-      promotora: "@Promotora.1",
-      image: "asesora1.jpg"
+      municipio: "Municipio Rivas",
+      testimonio: "Líder de ventas regional con amplia experiencia en capacitación.",
+      promotora: "@Promotora.3",
+      image: gerente3
     },
     {
       id: 4,
-      municipio: "Municipio Benítez",
-      testimonio: "El municipio Benítez cuenta con una gerente de promociones Adiemi dispuesta a ofrecerte la mejor atención y ayuda necesaria para que puedas formar parte de nuestro equipo de trajo.",
-      promotora: "@Promotora.1",
-      image: "asesora1.jpg"
-    },
+      municipio: "Municipio Andrés Eloy",
+      testimonio: "Coordinadora de nuevas incorporaciones al equipo Adiemi.",
+      promotora: "@Promotora.4",
+      image: gerente2
+    }
   ];
 
   const visibleAdvisors = [
@@ -51,52 +54,52 @@ const AdvisorInfo = () => {
   };
 
   return (
-    <section>
-      <div>
+    <section className="managerSection">
+      <div className="managerContainer">
         {/* Sección Informativa (40% ancho) */}
-        <div>
-          <h2>Asesoras Adiemi</h2>
-          <h3>
+        <div className="managerInfo">
+          <h2>Gerentes de tu zona</h2>
+          <h3 className="titleSecondary">
             Conoce al <span>corazón de Adiemi</span>
           </h3>
-          <p>Nuestras asesoras son profesionales clave que brindan apoyo personalizado para tu emprendimiento.</p>
-          <p>Mujeres exitosas que inspiran y comparten los beneficios exclusivos de nuestra red.</p>
+          <p>Nuestras gerentes son una de las partes <span>más importantes</span> de <span>Adiemi</span>, conoce a nuestras gerentes según tu zona.</p>
+          <p><span>Mujeres exitosas </span>que inspiran y comparten los beneficios exclusivos de Adiemi.</p>
           
-          <div>
+          <div className="highlighBox">
             <h3>¿Quieres ser parte de nuestro equipo?</h3>
-            <button>CLICK AQUÍ PARA MÁS INFORMACIÓN</button>
+            <button className="btnMore">CLICK AQUÍ PARA MÁS INFORMACIÓN</button>
           </div>
         </div>
 
         {/* Carrusel de Asesoras (60% ancho) */}
-        <div
+        <div className="managerCarrusel"
           onMouseEnter={() => setShowArrows(true)}
           onMouseLeave={() => setShowArrows(false)}
         >
           {showArrows && (
-            <button onClick={prevAdvisors}>
+            <button className="carouselArrow prev" onClick={prevAdvisors}>
               &lt;
             </button>
           )}
 
-          <div>
+          <div className="managerCardsContainer">
             {visibleAdvisors.map((advisor) => (
-              <div key={advisor.id}>
+              <div key={advisor.id} className="managerCard">
                 <div 
-                  className="advisor-image" 
+                  className="managerImage" 
                   style={{ backgroundImage: `url(${advisor.image})` }}
                 />
-                <div className="advisor-details">
+                <div className="managerDetails">
                   <h4>{advisor.municipio}</h4>
-                  <p>"{advisor.testimonio}"</p>
-                  <p>{advisor.promotora}</p>
+                  <p className="testimonial">"{advisor.testimonio}"</p>
+                  <p className="promoter">{advisor.promotora}</p>
                 </div>
               </div>
             ))}
           </div>
 
           {showArrows && (
-            <button onClick={nextAdvisors}>
+            <button className="carouselArrow next" onClick={nextAdvisors}>
               &gt;
             </button>
           )}
@@ -104,7 +107,7 @@ const AdvisorInfo = () => {
       </div>
 
       {/* Indicadores */}
-      <div className="carousel-indicators">
+      <div className="carouselIndicators">
         {advisors.map((_, index) => (
           <span 
             key={index}

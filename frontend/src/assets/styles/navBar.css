@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'monserrat';
+  src: url('../../assets/fonts/Montserrat-Bold.ttf')
+}
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --gray: #9f9f9f;
+  --lightGray: #f57f7f7;
+  --green:#01893b;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.navbar-logo button{
+    border: none;
+    background-color: transparent;
+}
+.navbar-logo img {
+  height: 50px;
+}
+.navbar-links {
+  display: flex;
+  gap: 50px;
+}
+.navbar-links button {
+  font-family: 'monserrat', sans-serif;
+  font-size: 16px;
+  color: var(--black);
+  height: 40px;
+  padding: 0px 10px;
+  border: none;
+  background-color: transparent;
+}
+.navbar-links button:hover {
+  color: var(--green);
+  cursor: pointer;
+  border-bottom: 2px solid var(--green);
+}
+
+.navbar-links button.active {
+  color: var(--green);
+  border-bottom: 2px solid var(--green);
+}
+
+.navbar-login{
+  font-family: 'monserrat', sans-serif;
+  font-size: 16px;
+  color: var(--white);
+  height: 40px;
+  padding: 0px 10px;
+  border: none;
+  border-radius: 25px;
+  background-color: var(--green);
+}
+.navbar-login:hover {
+  background-color: var(--black);
+  cursor: pointer;
+}

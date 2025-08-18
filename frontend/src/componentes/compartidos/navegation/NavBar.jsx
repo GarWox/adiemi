@@ -12,7 +12,6 @@ const NavBar = ({ scrollToBanner, scrollToPromos, scrollToAdvisor, activeSection
       <div className="navbar-logo">
         <button 
           onClick={scrollToBanner}
-          className={activeSection === 'banner' ? 'active' : ''}
         >
           <img src={logo} alt="Logo" />
         </button>
@@ -46,7 +45,7 @@ const NavBar = ({ scrollToBanner, scrollToPromos, scrollToAdvisor, activeSection
       </div>
       {/* boton de iniciar sesión */}
       <div>
-        <button>Iniciar Sesión</button>
+        <button className='navbar-login'>Iniciar Sesión</button>
       </div>
     </nav>
   );

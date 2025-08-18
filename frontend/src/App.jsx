@@ -1,11 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/Home/HomePage';
+import Blog from './pages/blog/blog'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter> 
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/Blog" element={<Blog />} />
       </Routes>
     </BrowserRouter>
   );

@@ -4,6 +4,8 @@ import NavBar from '../../componentes/compartidos/navegation/NavBar';
 import MainBanner from './components/MainBanner/MainBanner';
 import PromoSlider from './components/PromoSlider/PromoSlider';
 import Advisor from './components/advisorInfo/advisorInfo';
+import Footer from './components/footer/footer'
+import '../../assets/styles/index.css'
 
 const HomePage = () => {
   // Estados para manejar la sección activa y referencias a las secciones
@@ -46,25 +48,37 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="home-page">
+    <div className="homePage">
       <NavBar 
         scrollToBanner={() => scrollTo(bannerRef)}
         scrollToPromos={() => scrollTo(promosRef)}
         scrollToAdvisor={() => scrollTo(advisorRef)}
         activeSection={activeSection}
       />
+      <div className="homeSection">
+        <section ref={bannerRef}>
+          <MainBanner />
+        </section>
+      </div>
       
-      <section ref={bannerRef} className="home-section">
-        <MainBanner />
-      </section>
-      
-      <section ref={promosRef} className="home-section">
-        <PromoSlider />
-      </section>
-      
-      <section ref={advisorRef} className="home-section">
+      <div className="homeSection">
+        <section ref={promosRef} >
+          <PromoSlider />
+        </section>
+      </div>
+     
+      <div className="homeSection">
+        <section ref={advisorRef}>
         <Advisor />
       </section>
+      </div>
+
+      <div className="homeSection">
+        <section>
+        <Footer />
+      </section>
+      </div>
+      
     </div>
   );
 };
