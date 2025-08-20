@@ -1,24 +1,24 @@
 @font-face {
-  font-family: 'extraBoldItalic';
-  src: url('../../assets/fonts/Montserrat-ExtraBoldItalic.ttf')
+  font-family: "extraBoldItalic";
+  src: url("../../assets/fonts/Montserrat-ExtraBoldItalic.ttf");
 }
 @font-face {
-  font-family: 'semiBoldItalic';
-  src: url('../../assets/fonts/Montserrat-SemiBoldItalic.ttf')
+  font-family: "semiBoldItalic";
+  src: url("../../assets/fonts/Montserrat-SemiBoldItalic.ttf");
 }
 @font-face {
-  font-family: 'boldItalic';
-  src: url('../../assets/fonts/Montserrat-BoldItalic.ttf')
-}
-
-@font-face {
-  font-family: 'montserrat';
-  src: url('../../assets/fonts/Montserrat-Regular.ttf')
+  font-family: "boldItalic";
+  src: url("../../assets/fonts/Montserrat-BoldItalic.ttf");
 }
 
 @font-face {
-  font-family: 'ExtraBold';
-  src: url('../../assets/fonts/Montserrat-ExtraBoldItalic.ttf')
+  font-family: "montserrat";
+  src: url("../../assets/fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "ExtraBold";
+  src: url("../../assets/fonts/Montserrat-ExtraBoldItalic.ttf");
 }
 
 :root {
@@ -26,27 +26,27 @@
   --white: #fff;
   --gray: #9f9f9f;
   --lightGray: #f7f7f7;
-  --green:#01893b;
+  --green: #01893b;
 }
 
-.banerContainer{
+.banerContainer {
   position: relative;
-    display: flex;
-    background-color: var(--lightGray);
+  display: flex;
+  background-color: var(--lightGray);
 }
 
 /* ----------parte de información--------- */
-.bannerInfo{
+.bannerInfo {
   width: 60%;
   padding: 10px;
 }
-.bannerText{
+.bannerText {
   width: 82%;
 }
 
 /* titulos */
-.bannerInfo h1{
-  font-family: 'semiBoldItalic', sans-serif;
+.bannerInfo h1 {
+  font-family: "semiBoldItalic", sans-serif;
   font-size: 55px;
   color: var(--black);
   margin-bottom: 0px;
@@ -54,32 +54,32 @@
   width: 600px;
   padding-left: 5px;
 }
-.bannerInfo h2{
-  font-family: 'ExtraBoldItalic', sans-serif;
+.bannerInfo h2 {
+  font-family: "ExtraBoldItalic", sans-serif;
   font-size: 60px;
   color: var(--black);
   margin: 0px auto 5px auto;
 }
 
-.bannerText h3{
-  font-family: 'boldItalic', sans-serif;
+.bannerText h3 {
+  font-family: "boldItalic", sans-serif;
   font-size: 25px;
   color: var(--black);
 }
 /* texto */
-.bannerText p{
-  font-family: 'montserrat', sans-serif;
+.bannerText p {
+  font-family: "montserrat", sans-serif;
   font-size: 18px;
   color: var(--black);
 }
-.bannerText p span{
-  font-family: 'montserrat', sans-serif;
+.bannerText p span {
+  font-family: "montserrat", sans-serif;
   font-size: 18px;
   color: var(--black);
   font-weight: bold;
 }
 /* -------------parte de la imagen----------- */
-.bannerImage{
+.bannerImage {
   height: 90vh;
   background-color: transparent;
   display: flex;
@@ -88,38 +88,37 @@
 }
 .bannerImage img {
   width: 90%;
-
 }
 /* ---------------Botones ----------------- */
-.bannerButtons{
+.bannerButtons {
   height: 50px;
   display: flex;
   justify-content: center;
 }
-.bannerButtons button{
-  font-family: 'boldItalic', sans-serif;
+.bannerButtons button {
+  font-family: "boldItalic", sans-serif;
   font-size: 16px;
   height: 100%;
   border: none;
   border-radius: 25px;
   width: 50%;
-} 
-.btnprom{
+}
+.btnprom {
   background-color: var(--green);
   color: var(--white);
 }
-.btnprom:hover{
+.btnprom:hover {
   background-color: var(--black);
   cursor: pointer;
 }
-.bannerButtons .btnmore{
+.bannerButtons .btnmore {
   background-color: transparent;
   border: var(--black) 2px solid;
   color: var(--black);
   margin-left: 10px;
 }
-.bannerButtons .btnmore:hover{
+.bannerButtons .btnmore:hover {
   border: var(--green) 2px solid;
   color: var(--green);
   cursor: pointer;
-} 
+}
