@@ -1,15 +1,17 @@
-.mainBanner{
-  height: 90vh;
+body {
+  overflow-x: hidden;
+}
+
+.mainBanner {
+  height: 100vh;
   background-color: aqua;
 }
-.homePage{
+.homePage {
   display: flex;
   flex-direction: column;
   margin-top: 63px;
 }
-.homeSection{
+.homeSection {
   height: 100vh;
-  padding:0px;
+  padding: 0px;
 }
-
-

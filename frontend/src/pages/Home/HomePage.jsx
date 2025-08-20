@@ -1,40 +1,40 @@
 // importaciones necesarias, aqui tambien se esportaron los otros componentes
-import React, { useRef, useState, useEffect } from 'react';
-import NavBar from '../../componentes/compartidos/navegation/NavBar';
-import MainBanner from './components/MainBanner/MainBanner';
-import PromoSlider from './components/PromoSlider/PromoSlider';
-import Advisor from './components/advisorInfo/advisorInfo';
-import Footer from './components/footer/footer'
-import '../../assets/styles/index.css'
+import React, { useRef, useState, useEffect } from "react";
+import NavBar from "../../componentes/compartidos/navegation/NavBar";
+import MainBanner from "./components/MainBanner/MainBanner";
+import PromoSlider from "./components/PromoSlider/PromoSlider";
+import Advisor from "./components/advisorInfo/advisorInfo";
+import Footer from "./components/footer/footer";
+import "../../assets/styles/index.css";
 
 const HomePage = () => {
   // Estados para manejar la sección activa y referencias a las secciones
-  const [activeSection, setActiveSection] = useState('banner');
+  const [activeSection, setActiveSection] = useState("banner");
   const bannerRef = useRef(null);
   const promosRef = useRef(null);
   const advisorRef = useRef(null);
 
   // Función para desplazar suavemente a una sección específica
   const scrollTo = (ref) => {
-    ref.current?.scrollIntoView({ behavior: 'smooth' });
+    ref.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   // Detecta la sección visible
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             if (entry.target === bannerRef.current) {
-              setActiveSection('banner');
+              setActiveSection("banner");
             } else if (entry.target === promosRef.current) {
-              setActiveSection('promos');
+              setActiveSection("promos");
             } else if (entry.target === advisorRef.current) {
-              setActiveSection('advisor');
+              setActiveSection("advisor");
             }
           }
         });
-      }, 
+      },
       { threshold: 0.5 } // Se considera visible cuando el 50% está en pantalla
     );
 
@@ -49,7 +49,7 @@ const HomePage = () => {
 
   return (
     <div className="homePage">
-      <NavBar 
+      <NavBar
         scrollToBanner={() => scrollTo(bannerRef)}
         scrollToPromos={() => scrollTo(promosRef)}
         scrollToAdvisor={() => scrollTo(advisorRef)}
@@ -60,25 +60,24 @@ const HomePage = () => {
           <MainBanner />
         </section>
       </div>
-      
-      <div className="homeSection">
-        <section ref={promosRef} >
+
+      <div className="promo-slider">
+        <section ref={promosRef}>
           <PromoSlider />
         </section>
       </div>
-     
+
       <div className="homeSection">
         <section ref={advisorRef}>
-        <Advisor />
-      </section>
+          <Advisor />
+        </section>
       </div>
 
       <div className="homeSection">
         <section>
-        <Footer />
-      </section>
+          <Footer />
+        </section>
       </div>
-      
     </div>
   );
 };
