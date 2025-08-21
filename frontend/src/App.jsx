@@ -3,6 +3,7 @@ import HomePage from './pages/Home/HomePage';
 import Blog from './pages/blog/blog'
 import Product from './pages/Product/Product';
 import TestProduct from './pages/Product/TestProduct';
+import Tradicional from './pages/Promotion/Traditional';
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <Route path="/Blog" element={<Blog />} />
         <Route path="/Product" element={<Product />} />
         <Route path="/TestProduct" element={<TestProduct />} />
+        <Route path="/Traditional" element={<Tradicional />} />
         
       </Routes>
     </BrowserRouter>
