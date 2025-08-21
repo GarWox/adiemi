@@ -1,5 +1,6 @@
 /* Footer Styles */
 footer {
+  max-width: 98vw;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto auto auto;
@@ -102,6 +103,7 @@ footer a {
   /* MOBILE FOOTER STYLES */
 
   footer {
+    max-width: 98vw;
     font-size: 0.75rem;
     margin: 0;
     display: grid;
@@ -182,6 +184,9 @@ footer a {
 }
 
 @media (min-width: 568px) and (max-width: 792px) {
+  body {
+    max-width: 98vw;
+  }
   footer {
     font-size: 0.875rem;
   }

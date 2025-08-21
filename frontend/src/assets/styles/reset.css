@@ -9,3 +9,7 @@
 a {
   text-decoration-line: none;
 }
+
+body {
+  overflow-x: hidden;
+}
