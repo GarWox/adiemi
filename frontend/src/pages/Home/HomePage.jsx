@@ -1,10 +1,11 @@
-// importaciones necesarias, aqui tambien se esportaron los otros componentes
+// importaciones necesarias, aqui tambien se exportaron los otros componentes
 import React, { useRef, useState, useEffect } from "react";
 import NavBar from "../../componentes/compartidos/navegation/NavBar";
 import MainBanner from "./components/MainBanner/MainBanner";
 import PromoSlider from "./components/PromoSlider/PromoSlider";
 import Advisor from "./components/advisorInfo/advisorInfo";
 import Footer from "./components/footer/footer";
+import "../../assets/styles/reset.css";
 import "../../assets/styles/index.css";
 
 const HomePage = () => {

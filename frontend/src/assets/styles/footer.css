@@ -1,0 +1,64 @@
+/* Footer Styles */
+footer {
+  min-height: 100vh;
+  padding: 4rem 0 0 0;
+  margin: 0 3rem 0 3rem;
+}
+
+footer * {
+  margin: 0 auto;
+}
+
+/* INFO CONTAINER STYLES */
+
+.info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-container h3 {
+  font-family: "ExtraBold";
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-container li {
+  list-style: none;
+  margin-bottom: 0.5ex;
+}
+
+.info-container a {
+  color: black;
+}
+
+/* SOCIAL MEDIA STYLES */
+
+.social-media-container {
+  min-width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem;
+  text-align: center;
+  /* background-color: antiquewhite; */
+}
+
+.social-media-container h3 {
+  font-size: 2.25rem;
+  margin: 1rem auto;
+}
+
+/* .social-media-container section {
+} */
+
+.social-media-container a {
+  margin: 0 1rem;
+  font-size: 3.75rem;
+  color: black;
+}
+
+/* COPYRIGHT */
+
+.footer-copyright {
+  margin-top: 3rem;
+  text-align: center;
+}

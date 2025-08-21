@@ -1,6 +1,5 @@
 import React from "react";
 import MotoFoto from "../../../../assets/images/PortadaInicio.jpg";
-import "../../../../assets/styles/reset.css";
 import "../../../../assets/styles/HomeBanner.css";
 
 const MainBanner = () => {
