@@ -29,7 +29,7 @@
   --green: #01893b;
 }
 
-.managerContainer {
+.manager-container {
   display: grid;
   grid-template-columns: 36% 52%;
   width: 100%;
@@ -37,19 +37,19 @@
   height: 100vh;
 }
 
-.managerInfo {
+.manager-info {
   background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.managerInfo h2 {
+.manager-info h2 {
   font-family: bold;
   font-size: 45px;
   color: var(--black);
 }
-.managerInfo h2::after {
+.manager-info h2::after {
   content: "";
   position: absolute;
   left: 0;
@@ -61,29 +61,29 @@
   width: 500px;
 }
 
-.titleSecondary {
+.title-secondary {
   font-family: mediumItalic;
   font-size: 23px;
   color: var(--gray);
   margin-bottom: 0.5rem;
 }
 
-.titleSecondary span {
+.title-econdary span {
   font-family: boldItalic;
   color: var(--black);
 }
 
-.managerInfo p {
+.manager-info p {
   font-family: montserrat;
   font-size: 16px;
   color: var(--black);
 }
 
-.managerInfo p span {
+.manager-info p span {
   font-family: boldItalic;
 }
 
-.highlighBox {
+.highligh-box {
   background: #f8f9fa;
   margin-top: 1rem;
   display: flex;
@@ -92,13 +92,13 @@
   text-align: center;
 }
 
-.highlighBox h3 {
+.highligh-box h3 {
   font-family: bold;
   font-size: 23px;
   margin: 10px;
 }
 
-.btnMore {
+.btn-more {
   background: var(--green);
   color: var(--white);
   border: none;
@@ -110,6 +110,6 @@
   transition: background 0.3s;
 }
 
-.btnMore:hover {
+.btn-more:hover {
   background: var(--gray);
 }
