@@ -9,3 +9,7 @@
 a {
   text-decoration-line: none;
 }
+
+body {
+  margin: 0 auto;
+}

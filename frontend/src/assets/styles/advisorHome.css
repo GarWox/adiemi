@@ -21,6 +21,16 @@
   src: url("../../assets/fonts/Montserrat-ExtraBold.ttf");
 }
 
+@font-face {
+  font-family: "semiBoldItalic";
+  src: url("../../assets/fonts/Montserrat-SemiBoldItalic.ttf");
+}
+
+@font-face {
+  font-family: "italic";
+  src: url("../../assets/fonts/Montserrat-Italic.ttf");
+}
+
 :root {
   --black: #000;
   --white: #fff;
@@ -35,6 +45,8 @@
   margin: 3rem auto;
   padding: 0 1rem;
 }
+
+/* MANAGER INFO */
 
 .advisor-container {
   display: flex;
@@ -95,7 +107,8 @@
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s;
+  background: var(--green);
+  transition: all 0.3s;
 }
 
 .cta-button:hover {

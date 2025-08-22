@@ -1,4 +1,3 @@
-// aqui son las importaciones necesarias
 import { useNavigate, useLocation } from "react-router-dom";
 import logo from "../../../assets/images/logoAdiemi.png";
 import "../../../assets/styles/navBar.css";
@@ -10,11 +9,24 @@ const NavBar = ({
   activeSection,
 }) => {
   const navigate = useNavigate();
-  const location = useLocation(); // Obtiene la ruta actual
+  const location = useLocation();
 
-  // Verifica si la ruta actual incluye "/productos" o rutas de productos
   const isProductPage =
     location.pathname === "/Product" || location.pathname === "/TestProduct";
+  
+  // Verifica si estamos en la página de inicio
+  const isHomePage = location.pathname === "/";
+
+  // Función para manejar el clic en los botones de navegación
+  const handleNavigation = (section, scrollFunction) => {
+    if (isHomePage) {
+      // Si estamos en home, hacemos scroll
+      scrollFunction();
+    } else {
+      // Si estamos en otra página, navegamos a home y pasamos la sección como estado
+      navigate("/", { state: { scrollTo: section } });
+    }
+  };
 
   return (
     <nav className="navbar">
@@ -27,21 +39,21 @@ const NavBar = ({
       {/* enlances de navegacion */}
       <div className="navbar-links">
         <button
-          onClick={scrollToBanner}
+          onClick={() => handleNavigation("banner", scrollToBanner)}
           className={activeSection === "banner" ? "active" : ""}
         >
           Inicio
         </button>
 
         <button
-          onClick={scrollToPromos}
+          onClick={() => handleNavigation("promos", scrollToPromos)}
           className={activeSection === "promos" ? "active" : ""}
         >
           Promociones
         </button>
 
         <button
-          onClick={scrollToAdvisor}
+          onClick={() => handleNavigation("advisor", scrollToAdvisor)}
           className={activeSection === "advisor" ? "active" : ""}
         >
           Sobre nosotros

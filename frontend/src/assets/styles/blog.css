@@ -1,0 +1,27 @@
+.construction-section {
+  font-family: "montserrat", sans-serif;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  text-align: center;
+}
+
+.construction-message h1 {
+  font-family: "bold", sans-serif;
+  font-size: 2em;
+  color: var(--black);
+  margin-bottom: 0.5em;
+}
+
+.construction-message h1 span {
+  font-family: "extraBoldItalic", sans-serif;
+  color: var(--black);
+}
+
+.construction-message span {
+  font-family: "boldItalic";
+  color: var(--black);
+}
