@@ -101,7 +101,9 @@ const PremiumFull = () => {
               </button>
   
               {/* Indicadores */}
-              <div className="carousel-indicators">
+               
+            </div>
+            <div className="carousel-indicators">
                 {carouselImages.map((_, index) => (
                   <button
                     key={index}
@@ -109,8 +111,7 @@ const PremiumFull = () => {
                     onClick={() => goToSlide(index)}
                   />
                 ))}
-              </div> 
-            </div>
+              </div>
           </div>
   
           {/* Información de la promoción */}
@@ -129,7 +130,7 @@ const PremiumFull = () => {
   
             {/* Selectores */}
             <div className="promo-selectors">
-              <div className="selector-group">
+              <div className="selector-quantity">
                 <span>Cantidad:</span>
                 <select 
                   name="cantidad" 
@@ -145,7 +146,7 @@ const PremiumFull = () => {
                 </select>
               </div>
               
-              <div className="selector-group">
+              <div className="selector-option">
                 <select 
                   name="option" 
                   value={selectedOption}
@@ -165,15 +166,7 @@ const PremiumFull = () => {
               <button onClick={() => setIsOpen(true)} className="help-btn">
                 Click Para Saber Como
               </button>
-          </div>
-          </div>
-  
-          {/* Sección de ayuda */}
-          <div className="help-section">
-            <h3>¿No sabes hacer tu pedido?</h3>
-            <button onClick={() => setIsOpen(true)} className="help-btn">
-              Click Para Saber Como
-            </button>
+            </div>
           </div>
         </div>
   

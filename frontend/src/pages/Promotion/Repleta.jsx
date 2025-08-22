@@ -129,7 +129,7 @@ const Repleta = () => {
     
               {/* Selectores */}
               <div className="promo-selectors">
-                <div className="selector-group">
+                <div className="selector-quantity">
                   <span>Cantidad:</span>
                   <select 
                     name="cantidad" 
@@ -145,7 +145,7 @@ const Repleta = () => {
                   </select>
                 </div>
                 
-                <div className="selector-group">
+                <div className="selector-option">
                   <select 
                     name="option" 
                     value={selectedOption}

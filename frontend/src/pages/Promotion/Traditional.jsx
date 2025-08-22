@@ -100,6 +100,8 @@ const Traditional = () => {
             </button>
 
             {/* Indicadores */}
+             
+          </div>
             <div className="carousel-indicators">
               {carouselImages.map((_, index) => (
                 <button
@@ -108,8 +110,7 @@ const Traditional = () => {
                   onClick={() => goToSlide(index)}
                 />
               ))}
-            </div> 
-          </div>
+            </div>
         </div>
 
         {/* Información de la promoción */}
@@ -128,7 +129,7 @@ const Traditional = () => {
 
           {/* Selectores */}
           <div className="promo-selectors">
-            <div className="selector-group">
+            <div className="selector-quantity">
               <span>Cantidad:</span>
               <select 
                 name="cantidad" 
@@ -144,12 +145,13 @@ const Traditional = () => {
               </select>
             </div>
             
-            <div className="selector-group">
+            <div className="selector-option">
               <select 
                 name="option" 
                 value={selectedOption}
                 onChange={(e) => setSelectedOption(e.target.value)}
               >
+                <option value="">Premio</option>
                 <option value="opcion2">Opción 2</option>
                 <option value="opcion3">Opción 3 </option>
                 <option value="opcion4">Opción 4</option>
@@ -195,7 +197,7 @@ const Traditional = () => {
       <Modal isOpen={isOrderModalOpen} onClose={closeOrderModal}>
         <div className="order-confirmation">
           <div className='details-part'>
-            <h2>¡Orden Confirmada!</h2>
+            <h2>Orden de Pedido</h2>
           
             <div className="order-details">
               <div className="order-item">
@@ -207,7 +209,6 @@ const Traditional = () => {
                 <strong>Número de Pedido:</strong>
                 <span className="order-number">{orderData.orderNumber}</span>
               </div>
-              
               
               
               <div className="order-item">

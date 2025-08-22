@@ -29,87 +29,210 @@
   --green: #01893b;
 }
 
-.managerContainer {
-  display: grid;
-  grid-template-columns: 36% 52%;
-  width: 100%;
-  gap: 10%;
-  height: 100vh;
+/* Estructura principal */
+.advisor-section {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1rem;
 }
 
-.managerInfo {
-  background-color: transparent;
+.advisor-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  gap: 2rem;
 }
 
-.managerInfo h2 {
-  font-family: bold;
-  font-size: 45px;
-  color: var(--black);
-}
-.managerInfo h2::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 240vh;
-  background-color: #01893b;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  height: 20px;
-  width: 500px;
+.advisor-info {
+  flex: 0 0 40%;
+  padding: 1rem;
 }
 
-.titleSecondary {
-  font-family: mediumItalic;
-  font-size: 23px;
-  color: var(--gray);
-  margin-bottom: 0.5rem;
+.advisor-carousel-wrapper {
+  flex: 0 0 60%;
+  position: relative;
 }
 
-.titleSecondary span {
-  font-family: boldItalic;
-  color: var(--black);
+/* Estilos de la información */
+.advisor-info h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
 }
 
-.managerInfo p {
-  font-family: montserrat;
-  font-size: 16px;
-  color: var(--black);
+.title-secondary {
+  font-size: 1.3rem;
+  color: #7f8c8d;
+  margin-bottom: 1rem;
 }
 
-.managerInfo p span {
-  font-family: boldItalic;
+.title-secondary span {
+  color: #e74c3c;
+  font-weight: bold;
 }
 
-.highlighBox {
+.advisor-info p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.highlight-box {
   background: #f8f9fa;
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
 }
 
-.highlighBox h3 {
-  font-family: bold;
-  font-size: 23px;
-  margin: 10px;
+.highlight-box h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
 }
 
-.btnMore {
-  background: var(--green);
-  color: var(--white);
+.cta-button {
+  background: #e74c3c;
+  color: white;
   border: none;
   padding: 0.8rem 1.5rem;
-  border-radius: 25px;
-  font-family: boldItalic;
+  border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s;
 }
 
-.btnMore:hover {
-  background: var(--gray);
+.cta-button:hover {
+  background: #c0392b;
+}
+
+/* Estilos del carrusel */
+.advisor-cards-container {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.advisor-card {
+  flex: 0 0 calc(50% - 0.75rem);
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.advisor-card:hover {
+  transform: translateY(-5px);
+}
+
+.advisor-image {
+  height: 350px;
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.advisor-details {
+  padding: 1.5rem;
+}
+
+.advisor-details h4 {
+  color: #2c3e50;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.testimonial {
+  color: #7f8c8d;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.promoter {
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Flechas del carrusel */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  color: #e74c3c;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-arrow:hover {
+  background: #e74c3c;
+  color: white;
+}
+
+.carousel-arrow.prev {
+  left: -20px;
+}
+
+.carousel-arrow.next {
+  right: -20px;
+}
+
+/* Indicadores */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.indicator.active {
+  background: #e74c3c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .advisor-container {
+    flex-direction: column;
+  }
+  
+  .advisor-info,
+  .advisor-carousel-wrapper {
+    flex: 0 0 100%;
+  }
+  
+  .advisor-cards-container {
+    flex-direction: column;
+  }
+  
+  .advisor-card {
+    flex: 0 0 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .carousel-arrow.prev {
+    left: 10px;
+  }
+  
+  .carousel-arrow.next {
+    right: 10px;
+  }
 }

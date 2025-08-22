@@ -44,10 +44,10 @@ const AdvisorInfo= () => {
   };
 
   return (
-    <section className="managerSection">
-      <div className="managerContainer">
+    <section className="advisor section">
+      <div className="advisor-container">
         {/* Sección Informativa (40% ancho) */}
-        <div className="managerInfo">
+        <div className="advisor-info">
           <h2>Gerentes de tu zona</h2>
           <h3 className="titleSecondary">
             Conoce al <span>corazón de Adiemi</span>
@@ -62,24 +62,24 @@ const AdvisorInfo= () => {
         </div>
 
         {/* Carrusel de Asesoras (60% ancho) */}
-        <div className="managerCarrusel"
+        <div className="advisor-carousel-wrapper"
           onMouseEnter={() => setShowArrows(true)}
           onMouseLeave={() => setShowArrows(false)}
         >
           {showArrows && (
-            <button className="carouselArrow prev" onClick={prevAdvisors}>
+            <button className="carousel-arrow prev" onClick={prevAdvisors}>
               &lt;
             </button>
           )}
 
-          <div className="managerCardsContainer">
+          <div className="advisor-cards-container">
             {visibleAdvisors.map((advisor) => (
-              <div key={advisor.id} className="managerCard">
+              <div key={advisor.id} className="advisor-card">
                 <div 
-                  className="managerImage" 
+                  className="advisor-image" 
                   style={{ backgroundImage: `url(${advisor.image})` }}
                 />
-                <div className="managerDetails">
+                <div className="advisor-details">
                   <h4>{advisor.municipio}</h4>
                   <p className="testimonial">"{advisor.testimonio}"</p>
                   <p className="promoter">{advisor.promotora}</p>
@@ -89,7 +89,7 @@ const AdvisorInfo= () => {
           </div>
 
           {showArrows && (
-            <button className="carouselArrow next" onClick={nextAdvisors}>
+            <button className="carousel-arrow next" onClick={nextAdvisors}>
               &gt;
             </button>
           )}
@@ -97,7 +97,7 @@ const AdvisorInfo= () => {
       </div>
 
       {/* Indicadores */}
-      <div className="carouselIndicators">
+      <div className="carousel-indicators">
         {advisors.map((_, index) => (
           <span 
             key={index}
