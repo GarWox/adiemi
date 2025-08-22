@@ -82,17 +82,7 @@ const PromoSlider = () => {
         </button> */}
       </div>
 
-      {/* <div className="dotsContainer">
-        {promotions.map((_, index) => (
-          <span
-            key={index}
-            className={`dot ${
-              index === currentIndex % promotions.length ? "active" : ""
-            }`}
-            onClick={() => setCurrentIndex(index)}
-          />
-        ))}
-      </div> */}
+     
       <div className="pedidoContainer">
         <div>
           <h3>¿No sabes hacer tu pedido?</h3>

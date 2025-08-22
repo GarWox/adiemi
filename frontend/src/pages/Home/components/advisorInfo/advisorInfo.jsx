@@ -3,6 +3,7 @@ import "../../../../assets/styles/advisorHome.css";
 import gerente1 from "../../../../assets/images/Yunmary_Garcia.jpg";
 import gerente2 from "../../../../assets/images/Mairelis_Rodríguez.jpg";
 import gerente3 from "../../../../assets/images/Amada_Gonzáles.jpg";
+import '../../../../assets/styles/reset.css'
 
 const AdvisorInfo = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -45,7 +46,6 @@ const AdvisorInfo = () => {
   const prevAdvisors = () => {
     setCurrentIndex((prev) => (prev - 1 + advisors.length) % advisors.length);
   };
-
   return (
     <section className="managerSection">
       <div className="managerContainer">
@@ -109,17 +109,6 @@ const AdvisorInfo = () => {
             </button>
           )}
         </div>
-      </div>
-
-      {/* Indicadores */}
-      <div className="carousel-indicators">
-        {advisors.map((_, index) => (
-          <span
-            key={index}
-            className={`indicator ${index === currentIndex ? "active" : ""}`}
-            onClick={() => setCurrentIndex(index)}
-          />
-        ))}
       </div>
     </section>
   );

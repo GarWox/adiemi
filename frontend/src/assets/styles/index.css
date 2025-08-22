@@ -8,6 +8,14 @@
   margin-top: 63px;
 }
 .homeSection {
+  position: relative;
   height: 100vh;
   padding: 0px;
+
+}
+
+@media (max-width: 992px) {
+  .homeSection {
+    height: 145vh;
+  }
 }
