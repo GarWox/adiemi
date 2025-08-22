@@ -48,7 +48,6 @@ const AdvisorInfo = () => {
 
   return (
     <section className="manager-section">
-      <hr />
       <div className="manager-container">
         {/* Sección Informativa (40% ancho) */}
         <article className="manager-info">
