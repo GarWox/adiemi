@@ -429,9 +429,7 @@
   .image-container{
     display: none;
   }
-  .orden-note{
-    witch: 200px;
-  }
+ 
 }
 
 @media (max-width: 580px) {
