@@ -96,9 +96,8 @@ const AdvisorInfo = () => {
                   style={{ backgroundImage: `url(${advisor.image})` }}
                 />
                 <div className="managerDetails">
-                  <h4>{advisor.municipio}</h4>
+                  <h4>{advisor.gerente}</h4>
                   <p className="testimonial">"{advisor.testimonio}"</p>
-                  <p className="promoter">{advisor.promotora}</p>
                 </div>
               </div>
             ))}

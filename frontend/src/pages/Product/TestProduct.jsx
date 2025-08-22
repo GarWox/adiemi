@@ -5,8 +5,9 @@ import sombras from '../../assets/images/Sombras faeyli.jpg';
 import cremaMen from '../../assets/images/crema men.jpg'
 import bolso from '../../assets/images/bolso.jpg';
 import '../../assets/styles/products.css';
+import '../../assets/styles/testsProduct.css'
 import cepilloEdiy from '../../assets/images/Cepillo Ediy.jpg';
-
+ 
 const TestProduct = () => {
   return (
     <>
@@ -31,9 +32,9 @@ const TestProduct = () => {
 					
 				</div>
 			</div>
-			<div>
+			<div className='container-relation'>
 				<h2>Más Productos de Nuestras Promociones</h2>
-				<div>
+				<div className='relation-products'>
 
 					<Link to="/Blog" className="">
 						<img src={sombras} alt="Sombras de ojos faeyli" />

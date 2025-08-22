@@ -1,0 +1,197 @@
+@font-face {
+  font-family: "extraBoldItalic";
+  src: url("../../assets/fonts/Montserrat-ExtraBoldItalic.ttf");
+}
+@font-face {
+  font-family: "semiBoldItalic";
+  src: url("../../assets/fonts/Montserrat-SemiBoldItalic.ttf");
+}
+@font-face {
+  font-family: "boldItalic";
+  src: url("../../assets/fonts/Montserrat-BoldItalic.ttf");
+}
+
+@font-face {
+  font-family: "montserrat";
+  src: url("../../assets/fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "ExtraBold";
+  src: url("../../assets/fonts/Montserrat-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: "Bold";
+  src: url("../../assets/fonts/Montserrat-Bold.ttf");
+}
+:root {
+  --black: #000;
+  --white: #fff;
+  --gray: #b6afaf;
+  --lightGray: #f7f7f7;
+  --green: #01893b;
+  --red: #b11b0a;
+  --lightRed: #e74c3c;
+}
+
+/* Contenedor principal */
+.full-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 60px auto 0 auto;
+  padding: 20px;
+}
+
+/* Para pantallas grandes: disposición lado a lado */
+@media (min-width: 768px) {
+  .full-container {
+    flex-direction: row;
+    gap: 40px;
+    align-items: flex-start;
+  }
+}
+
+/* Caja de imagen */
+.Box-imagenes {
+  width: 100%;
+  width: 450px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.Box-imagenes img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.Box-imagenes img:hover {
+  transform: scale(1.02);
+}
+
+/* Caja de información */
+.info-box {
+  flex: 1;
+  padding: 20px 0;
+}
+
+.info-box h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: var(--black);
+  font-family: 'extrabold';
+}
+
+.info-box p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: var(--black);
+  font-family: 'montserrat';
+}
+
+.info-box span {
+  display: block;
+  margin-bottom: 20px;
+  color: var(--black);
+  font-family: "bold";
+
+}
+
+.info-box button {
+  background-color: var(--green);
+  color: var(--white);
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.3rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: "boldItalic";
+}
+
+.info-box button:hover {
+  background-color: var(--black);
+}
+
+/* Sección de productos relacionados */
+.container-relation {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.container-relation h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: var(--black);
+  font-family: ExtraBold;
+}
+
+.relation-products {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+
+/* Para tablets: 2 columnas */
+@media (min-width: 600px) {
+  .relation-products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Para escritorio: 3 columnas */
+@media (min-width: 900px) {
+  .relation-products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tarjetas de productos relacionados */
+.relation-products a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.relation-products a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.relation-products a img {
+  width: 100%;
+  height: 200px;
+  object-fit:cover;
+}
+
+.relation-products a h3 {
+  padding: 15px;
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 0;
+  color: var(--black);
+  font-family: 'montserrat';
+}
+
+/* Responsive para la información del producto */
+@media (max-width: 767px) {
+  .info-box {
+    text-align: center;
+  }
+  
+  .info-box h1 {
+    font-size: 1.7rem;
+  }
+}
