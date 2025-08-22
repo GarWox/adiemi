@@ -99,9 +99,9 @@
 }
 /* ---------------Botones ----------------- */
 .banner-buttons {
-  height: 50px;
   display: flex;
   justify-content: center;
+  padding: 0;
 }
 .banner-buttons button {
   font-family: "boldItalic", sans-serif;
@@ -110,8 +110,8 @@
   border: none;
   border-radius: 25px;
   margin: 2rem 3rem;
-  width: 100%;
   transition: all 0.2s ease-in;
+  padding: 1rem 1.2rem;
 }
 .banner-buttons .btn-prom {
   background-color: var(--green);
@@ -126,9 +126,17 @@
   border: var(--black) 2px solid;
   color: var(--black);
   margin-left: 10px;
+  height: 100%;
 }
 .banner-buttons .btn-more:hover {
   border-color: var(--green);
   color: var(--green);
   cursor: pointer;
+  background-color: transparent;
+}
+@media (max-width: 600px) {
+  .banner-info h1{
+   font-size: 34px;
+   width: 390px;
+  }
 }

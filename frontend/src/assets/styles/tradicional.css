@@ -416,16 +416,25 @@
   
   .order-confirmation {
     text-align: center;
+    width: 400px;
+    flex-direction: column;
+    padding: 5px;
   }
   
   .order-item {
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
+    flex-direction: row;
+    gap: 5rem;
+    justify-content: left;
+  }
+  .image-container{
+    display: none;
+  }
+  .orden-note{
+    witch: 200px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   .carousel {
     height: 300px;
   }
@@ -459,6 +468,7 @@
   .modalContainerSteps {
     grid-template-columns: 1fr;
   }
+  
 }
 
 /* Animaciones */

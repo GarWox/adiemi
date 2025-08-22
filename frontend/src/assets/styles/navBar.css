@@ -65,8 +65,15 @@
   border: none;
   border-radius: 25px;
   background-color: var(--green);
+  
 }
 .navbar-login:hover {
   background-color: var(--black);
   cursor: pointer;
+}
+/* menu responsive de repuesto */
+@media (max-width: 600px) {
+  .nav-hide{
+    display:none;
+  }
 }

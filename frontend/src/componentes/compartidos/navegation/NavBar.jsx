@@ -54,7 +54,7 @@ const NavBar = ({
 
         <button
           onClick={() => handleNavigation("advisor", scrollToAdvisor)}
-          className={activeSection === "advisor" ? "active" : ""}
+          className={`nav-hide ${activeSection === "advisor" ? "active" : ""}`}
         >
           Sobre nosotros
         </button>
@@ -66,11 +66,11 @@ const NavBar = ({
           Productos
         </button>
 
-        <button onClick={() => navigate("/Blog")}>Blog</button>
+        <button onClick={() => navigate("/Blog")} className="nav-hide">Blog</button>
       </div>
       {/* boton de iniciar sesión */}
       <div>
-        <button className="navbar-login">Iniciar Sesión</button>
+        <button className="navbar-login nav-hide">Iniciar Sesión</button>
       </div>
     </nav>
   );
