@@ -21,6 +21,16 @@
   src: url("../../assets/fonts/Montserrat-ExtraBold.ttf");
 }
 
+@font-face {
+  font-family: "semiBoldItalic";
+  src: url("../../assets/fonts/Montserrat-SemiBoldItalic.ttf");
+}
+
+@font-face {
+  font-family: "italic";
+  src: url("../../assets/fonts/Montserrat-Italic.ttf");
+}
+
 :root {
   --black: #000;
   --white: #fff;
@@ -29,87 +39,117 @@
   --green: #01893b;
 }
 
-.manager-container {
-  display: grid;
-  grid-template-columns: 36% 52%;
-  width: 100%;
-  gap: 10%;
-  height: 100vh;
+.manager-section {
+  min-height: 100vh;
+  margin-top: 4em;
 }
 
+.manager-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "manager carousel carousel";
+}
+
+/* MANAGER INFO */
+
 .manager-info {
-  background-color: transparent;
+  margin-left: 3.25em;
+  grid-area: manager;
+  /* background-color: transparent;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: column; */
 }
 
 .manager-info h2 {
+  margin-left: 1em;
+  margin-bottom: 0.25em;
   font-family: bold;
-  font-size: 45px;
+  font-size: 2em;
   color: var(--black);
 }
-.manager-info h2::after {
-  content: "";
+
+.title-bar {
+  width: 32%;
   position: absolute;
-  left: 0;
-  top: 240vh;
-  background-color: #01893b;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  height: 20px;
-  width: 500px;
+  left: 0%;
+  height: 0.67em;
+  background-color: var(--gray);
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
 }
 
-.title-secondary {
-  font-family: mediumItalic;
-  font-size: 23px;
-  color: var(--gray);
-  margin-bottom: 0.5rem;
+h3.title-secondary {
+  font-family: "italic";
+  font-size: 1.35em;
+  text-align: center;
+  margin: 0.75em;
 }
 
-.title-econdary span {
-  font-family: boldItalic;
+.title-secondary span {
+  font-family: "boldItalic";
   color: var(--black);
 }
 
-.manager-info p {
-  font-family: montserrat;
-  font-size: 16px;
+.manager-description {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "montserrat";
+  font-size: 1em;
   color: var(--black);
 }
 
-.manager-info p span {
-  font-family: boldItalic;
+.manager-description p {
+  margin-bottom: 1.5em;
 }
 
-.highligh-box {
-  background: #f8f9fa;
-  margin-top: 1rem;
+.manager-description p span {
+  font-family: "boldItalic";
+}
+
+.highlight-box {
   display: flex;
   flex-direction: column;
+  margin-top: 1em;
   align-items: center;
-  text-align: center;
+  justify-content: center;
 }
 
-.highligh-box h3 {
-  font-family: bold;
-  font-size: 23px;
-  margin: 10px;
+.highlight-box h3 {
+  font-family: "bold";
+  text-align: center;
+  font-size: 1.35em;
+  max-width: 80%;
 }
 
 .btn-more {
-  background: var(--green);
-  color: var(--white);
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 25px;
   font-family: boldItalic;
-  font-weight: bold;
+  max-width: 50%;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.8em 0;
+  border-radius: 2em;
+  border: none;
+  color: var(--white);
   cursor: pointer;
-  transition: background 0.3s;
+  background: var(--green);
+  transition: all 0.3s;
 }
 
 .btn-more:hover {
   background: var(--gray);
+  color: var(--black);
+}
+*/
+
+/* MANAGER CAROUSEL */
+
+.manager-carousel {
+  grid-area: carousel;
+  margin-right: 3em;
+}
+
+.manager-cards-container {
+  /* margin: 5em; */
 }

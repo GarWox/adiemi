@@ -48,23 +48,29 @@ const AdvisorInfo = () => {
 
   return (
     <section className="manager-section">
+      <hr />
       <div className="manager-container">
         {/* Sección Informativa (40% ancho) */}
         <article className="manager-info">
           <h2>Gerentes de tu zona</h2>
+          <div className="title-bar"></div>
+          <br />
           <h3 className="title-secondary">
             Conoce al <span>corazón de Adiemi</span>
           </h3>
-          <p>
-            Nuestras gerentes son una de las partes <span>más importantes</span>{" "}
-            de <span>Adiemi</span>, conoce a nuestras gerentes según tu zona.
-          </p>
-          <p>
-            <span>Mujeres exitosas </span>que inspiran y comparten los
-            beneficios exclusivos de Adiemi.
-          </p>
+          <div className="manager-description">
+            <p>
+              Nuestras gerentes son una de las partes&nbsp;
+              <span>más importantes</span> de <span>Adiemi</span>, conoce a
+              nuestras gerentes según tu zona.
+            </p>
+            <p>
+              <span>Mujeres exitosas </span>que inspiran y comparten los
+              beneficios exclusivos de Adiemi.
+            </p>
+          </div>
 
-          <div className="highligh-box">
+          <div className="highlight-box">
             <h3>¿Quieres ser parte de nuestro equipo?</h3>
             <button className="btn-more">
               CLICK AQUÍ PARA MÁS INFORMACIÓN
@@ -73,8 +79,8 @@ const AdvisorInfo = () => {
         </article>
 
         {/* Carrusel de Asesoras (60% ancho) */}
-        <div
-          className="manager-carrusel"
+        <article
+          className="manager-carousel"
           onMouseEnter={() => setShowArrows(true)}
           onMouseLeave={() => setShowArrows(false)}
         >
@@ -84,7 +90,7 @@ const AdvisorInfo = () => {
             </button>
           )}
 
-          <div className="manager-cards-container">
+          <article className="manager-cards-container">
             {visibleAdvisors.map((advisor) => (
               <div key={advisor.id} className="manager-card">
                 <div
@@ -98,14 +104,14 @@ const AdvisorInfo = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </article>
 
           {showArrows && (
             <button className="carousel-arrow next" onClick={nextAdvisors}>
               &gt;
             </button>
           )}
-        </div>
+        </article>
       </div>
 
       {/* Indicadores */}
