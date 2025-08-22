@@ -11,14 +11,14 @@ const TestProduct = () => {
   return (
     <>
 			<NavBar />
-			<div className="fullContainer">
+			<div className="full-container">
 				<div>
-					<div className="BoxImagenes">
+					<div className="Box-imagenes">
 						<img src={cepilloEdiy} alt="Cepillo Ediy" />
 					</div>
 				</div>
 				<div>
-					<div className='infoBox'>
+					<div className='info-box'>
 						<h1>Cepillo de peinar curly</h1>
 						<p>
 							Gracias a su froma ergonómica y púas flexibles, ayuda a desenredar el cabello sin romper la fibra capilar,

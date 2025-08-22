@@ -8,19 +8,20 @@ import step3 from "../../../../assets/images/Paso3.jpg";
 import step4 from "../../../../assets/images/Pasos4.jpg";
 import { Modal } from "../../../../componentes/ReusableModal";
 import "../../../../assets/styles/promo.css";
+import { Route, useNavigate } from "react-router-dom";
 
 const PromoSlider = () => {
   // mini base de datos de promociones
   const promotions = [
-    { id: 1, title: "Tradicional", image: tradicional },
-    { id: 2, title: "Premium Full", image: pFull },
-    { id: 3, title: "Repleta", image: repleta },
-    { id: 4, title: "Premium Full Star", image: pFull },
+    { id: 1, title: "Tradicional", image: tradicional, route: "/Traditional" },
+    { id: 2, title: "Premium Full", image: pFull, route: "/PremiumFull" },
+    { id: 3, title: "Repleta", image: repleta, route: "/Repleta" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
+  const navegate = useNavigate();
 
   useEffect(() => {
     const getVisibleCards = () => {
@@ -34,14 +35,18 @@ const PromoSlider = () => {
     setVisibleCards(getVisibleCards());
   }, [currentIndex, promotions.length]);
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % promotions.length);
-  };
+  // const nextSlide = () => {
+  //   setCurrentIndex((prev) => (prev + 1) % promotions.length);
+  // };
 
-  const prevSlide = () => {
-    setCurrentIndex(
-      (prev) => (prev - 1 + promotions.length) % promotions.length
-    );
+  // const prevSlide = () => {
+  //   setCurrentIndex(
+  //     (prev) => (prev - 1 + promotions.length) % promotions.length
+  //   );
+  // };
+
+  const handleImageClick = (route) => {
+    navegate(route); 
   };
 
   return (
@@ -52,13 +57,13 @@ const PromoSlider = () => {
 
       <div className="sliderContainer">
         {/* boton de previos */}
-        <button className="navButton prev" onClick={prevSlide}>
+        {/* <button className="navButton prev" onClick={prevSlide}>
           &lt;
-        </button>
+        </button> */}
         {/* contenedor de las tarjetas de promociones */}
         <div className="cardsContainer">
           {visibleCards.map((promo) => (
-            <div key={`${promo.id}-${currentIndex}`} className="promoCard">
+            <div key={`${promo.id}-${currentIndex}`} className="promoCard"  onClick={() => handleImageClick(promo.route)}>
               <div className="imageWrapper">
                 <img src={promo.image} alt={promo.title} />
               </div>
@@ -72,12 +77,12 @@ const PromoSlider = () => {
           ))}
         </div>
 
-        <button className="navButton next" onClick={nextSlide}>
+        {/* <button className="navButton next" onClick={nextSlide}>
           &gt;
-        </button>
+        </button> */}
       </div>
 
-      <div className="dotsContainer">
+      {/* <div className="dotsContainer">
         {promotions.map((_, index) => (
           <span
             key={index}
@@ -87,7 +92,7 @@ const PromoSlider = () => {
             onClick={() => setCurrentIndex(index)}
           />
         ))}
-      </div>
+      </div> */}
       <div className="pedidoContainer">
         <div>
           <h3>¿No sabes hacer tu pedido?</h3>

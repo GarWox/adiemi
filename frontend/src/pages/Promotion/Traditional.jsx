@@ -1,20 +1,18 @@
-// importaciones necesarias te hice la importación de una vez del estito pero esta vacio si no te da chance yo lo hago en la mañana
 import React, { useState } from 'react';
 import PromoT from '../../assets/images/Tradicional.jpg';
 import opcion1 from '../../assets/images/tradicionalOpcion2.jpg';
 import opcion2 from '../../assets/images/tradicional opcion3.jpg';
 import opcion3 from '../../assets/images/tradicional opcion4.jpg';
-import { Modal } from '../../componentes/ReusableModal'
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import step1 from '../../assets/images/Paso1.jpg';
 import step2 from '../../assets/images/Paso2.jpg';
 import step3 from '../../assets/images/Paso3.jpg';
 import step4 from '../../assets/images/Pasos4.jpg';
+import { Modal } from '../../componentes/ReusableModal';
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import NavBar from '../../componentes/compartidos/navegation/NavBar';
 import '../../assets/styles/promo.css';
-import '../../assets/styles/tradicional.css'
 
 const Traditional = () => {
-
   const [isOpen, setIsOpen] = useState(false);
   const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState('opcion2');
@@ -23,7 +21,6 @@ const Traditional = () => {
   const [orderData, setOrderData] = useState({
     promotionName: '',
     orderNumber: '',
-    customerName: '',
     prize: ''
   });
 
@@ -36,7 +33,12 @@ const Traditional = () => {
   ];
 
   // Datos de las opciones con sus premios
-  
+  const opcionesData = {
+    opcion2: { premio: "Opción 2" },
+    opcion3: { premio: "Opción 3" },
+    opcion4: { premio: "Opción 4" }
+  };
+
   // Funciones para navegar el carrusel
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1));
@@ -69,28 +71,36 @@ const Traditional = () => {
 
   return (
     <>
-      <div>
+      <NavBar />
+      <div className="promo-container">
         {/* Carrusel de imágenes */}
-        <div >
-          <div>
-            <div>
+        <div className="carousel-container">
+          <div className="carousel">
+            <div 
+              className="carousel-inner"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
               {carouselImages.map((image, index) => (
-                <div key={image.id}>
+                <div key={image.id} className="carousel-slide">
                   <img 
                     src={image.src} 
                     alt={image.alt} 
+                    className="carousel-image"
                   />
-                  <div>{index + 1}</div>
                 </div>
               ))}
             </div>
 
             {/* Botones de navegación */}
-            <button><IoIosArrowBack /></button>
-            <button ><IoIosArrowForward /></button>
+            <button className="carousel-btn carousel-btn-prev" onClick={prevSlide}>
+              <IoIosArrowBack/>
+            </button>
+            <button className="carousel-btn carousel-btn-next" onClick={nextSlide}>
+              <IoIosArrowForward/>
+            </button>
 
-            {/* Indicadores (donde dice indicator y active esas son clases)*/}
-            <div>
+            {/* Indicadores */}
+            <div className="carousel-indicators">
               {carouselImages.map((_, index) => (
                 <button
                   key={index}
@@ -98,17 +108,17 @@ const Traditional = () => {
                   onClick={() => goToSlide(index)}
                 />
               ))}
-            </div>
+            </div> 
           </div>
         </div>
 
         {/* Información de la promoción */}
-        <div>
-          <div>
+        <div className="promo-info">
+          <div className="promo-header">
             <h2>Promoción Tradicional</h2>
           </div>
           
-          <div>
+          <div className="promo-description">
             <p>
               Por vender y cancelar una colección en <span>6 cuotas puntuales</span> en las fechas pautadas, 
               tienes la oportunidad de ganar <span>excelentes premios</span> y un <span>descuento comercial de la Promo 
@@ -117,8 +127,8 @@ const Traditional = () => {
           </div>
 
           {/* Selectores */}
-          <div>
-            <div>
+          <div className="promo-selectors">
+            <div className="selector-group">
               <span>Cantidad:</span>
               <select 
                 name="cantidad" 
@@ -134,100 +144,100 @@ const Traditional = () => {
               </select>
             </div>
             
-            <div>
+            <div className="selector-group">
               <select 
                 name="option" 
                 value={selectedOption}
                 onChange={(e) => setSelectedOption(e.target.value)}
               >
-                <option value="opcion2">Opción 2 </option>
+                <option value="opcion2">Opción 2</option>
                 <option value="opcion3">Opción 3 </option>
-                <option value="opcion4">Opción 4 </option>
+                <option value="opcion4">Opción 4</option>
               </select>
-              <button onClick={handleOrder}>
+              <button onClick={handleOrder} className="order-btn">
                 Ordenar
               </button>
             </div>
+            <div className="help-section">
+            <h3>¿No sabes hacer tu pedido?</h3>
+            <button onClick={() => setIsOpen(true)} className="help-btn">
+              Click Para Saber Como
+            </button>
           </div>
+          </div>
+          
         </div>
 
-        {/* Instrucciones para hacer un pedido*/}
-        <div>
-          <h3>¿No sabes hacer tu pedido?</h3>
-          <button onClick={() => setIsOpen(true)}>
-            Click Para Saber Como
-          </button>
-        </div>
+        {/* Sección de ayuda */}
+        
       </div>
 
       {/* Modal de pasos */}
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <h2>Pasos para Hacer tu pedido</h2>
-        <div>
-          <div>
-            <img src={step1} alt="Paso 1" />
+        <h2 className="titleModal">Pasos para Hacer tu pedido</h2>
+        <div className="modalContainerSteps">
+          <div className="stepImgContainer">
+            <img className="imgStep" src={step1} alt="Paso 1" />
           </div>
-          <div >
-            <img src={step2} alt="Paso 2" />
+          <div className="stepImgContainer">
+            <img className="imgStep" src={step2} alt="Paso 2" />
           </div>
-          <div >
-            <img src={step3} alt="Paso 3" />
+          <div className="stepImgContainer">
+            <img className="imgStep" src={step3} alt="Paso 3" />
           </div>
-          <div>
-            <img src={step4} alt="Paso 4" />
+          <div className="stepImgContainer">
+            <img className="imgStep" src={step4} alt="Paso 4" />
           </div>
         </div>
       </Modal>
 
       {/* Modal de confirmación de orden */}
       <Modal isOpen={isOrderModalOpen} onClose={closeOrderModal}>
-        <div>
-          <h2>¡Orden Confirmada!</h2>
+        <div className="order-confirmation">
+          <div className='details-part'>
+            <h2>¡Orden Confirmada!</h2>
           
-          <div>
-            <div>
-              <strong>Promoción:</strong>
-              <span>{orderData.promotionName}</span>
-            </div>
-            
-            <div>
-              <strong>Número de Pedido:</strong>
-              <span>{orderData.orderNumber}</span>
-            </div>
-            
-            <div>
-              <strong>Nombre:</strong>
-              <span>{orderData.customerName}</span>
-            </div>
-            
-            <div>
-              <strong>Premio:</strong>
-              <span>{orderData.prize}</span>
-            </div>
-            
-            <div>
-              <strong>Cantidad: </strong>
-              <span>{quantity} unidad(es)</span>
+            <div className="order-details">
+              <div className="order-item">
+                <strong>Promoción:</strong>
+                <span>{orderData.promotionName}</span>
+              </div>
+              
+              <div className="order-item">
+                <strong>Número de Pedido:</strong>
+                <span className="order-number">{orderData.orderNumber}</span>
+              </div>
+              
+              
+              
+              <div className="order-item">
+                <strong>Premio:</strong>
+                <span className="prize">{orderData.prize}</span>
+              </div>
+              
+              <div className="order-item">
+                <strong>Cantidad:</strong>
+                <span>{quantity} unidad(es)</span>
+              </div>
+
+              <div className='order-note'>
+                <p>
+                  Nota: te estaremos contactando en un lapso de 7 días, si no te hemos contactado en ese tiempo
+                  por favor comunícate con soporte técnico.
+                </p>
+              </div>
             </div>
           </div>
-					<div>
-						<p>
-							Nota: te estaremos contactando en un lapso de 7 días, si no te hemos contactado en ese tiempo
-							por favor comunícate con soporte técnico.
-						</p>
-					</div>
-          <button onClick={closeOrderModal}>
-            Cerrar
-          </button>
+          <div className='imagen-part' >
+            <div className='image-container'>
+              <img src={PromoT} alt="promo Tradicional" />
+            </div>
+            <button onClick={closeOrderModal} className="close-btn">
+              Confirmar
+            </button>
+          </div>
+          
         </div>
-				<div>
-					<div>
-						<img src={PromoT} alt="" />
-					</div>
-					<button onClick={closeOrderModal}>
-            Cerrar
-          </button>
-				</div>
       </Modal>
     </>
   );
